@@ -1,6 +1,6 @@
 <script setup>
-// hello
-import { ref, watch, watchEffect } from 'vue'
+
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useFavoritesStore } from '@/stores/FavoritesStore'
