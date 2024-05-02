@@ -14,13 +14,12 @@ const props = defineProps({
   title: String,
   price: Number,
   id: Number,
-  isAdded: Boolean
+  isAdded: Boolean,
+  isFavorite: Boolean
 })
 
-const isFavorite = ref(false)
 
 const onHandleFavorite = (id) => {
-  isFavorite.value = !isFavorite.value
   addToFavorite(id)
 }
 const onHandleCart = (id) => {

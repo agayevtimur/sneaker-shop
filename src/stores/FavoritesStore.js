@@ -10,6 +10,7 @@ export const useFavoritesStore = defineStore('FavoritesStore', () => {
   const favoriteItems = ref([])
   const addToFavorite = (id) => {
     const itemToAdd = products.value.find((item) => item.id === id)
+    itemToAdd.isFavorite = true
     if (!favoriteItems.value.includes(itemToAdd)) {
       favoriteItems.value.push(itemToAdd)
     } else {
