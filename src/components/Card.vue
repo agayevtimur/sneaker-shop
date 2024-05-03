@@ -1,13 +1,8 @@
 <script setup>
-
-import { ref } from 'vue'
-import { storeToRefs } from 'pinia'
-
 import { useFavoritesStore } from '@/stores/FavoritesStore'
-const { addToFavorite } = useFavoritesStore()
-
 import { useCartStore } from '@/stores/CartStore'
-const { cartItems } = storeToRefs(useCartStore)
+
+const { addToFavorite } = useFavoritesStore()
 const { addToCart } = useCartStore()
 
 const props = defineProps({
@@ -15,19 +10,18 @@ const props = defineProps({
   title: String,
   price: Number,
   id: Number,
-  isAdded: Boolean
+  isAdded: Boolean,
+  isFavorite: Boolean
 })
 
-const isFavorite = ref(false)
 
 const onHandleFavorite = (id) => {
-  isFavorite.value = !isFavorite.value
   addToFavorite(id)
 }
+
 const onHandleCart = (id) => {
   addToCart(id)
 }
-
 
 </script>
 <template>

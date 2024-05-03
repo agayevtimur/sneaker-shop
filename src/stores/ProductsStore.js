@@ -168,13 +168,6 @@ export const useProductsStore = defineStore('ProductsStore', () => {
     }
   }
 
-  const updateProductCard = (id) => {
-    products.value.forEach((product) => {
-      if (product.id === id && product.isAdded === true) {
-        product.isAdded = false
-      }
-    })
-  }
 
-  return { products, filterProducts, searchProducts, updateProductCard }
+  return { products, filterProducts, searchProducts, }
 })

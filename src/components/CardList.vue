@@ -1,4 +1,5 @@
 <script setup>
+
 import Card from '@/components/Card.vue'
 
 import { useProductsStore } from '@/stores/ProductsStore'
@@ -10,7 +11,7 @@ const {products} = storeToRefs(productsStore)
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-5">
+  <div class="grid grid-cols-4 gap-5" v-auto-animate>
     <Card
       v-for="product in products"
       :key="product.id"
@@ -19,7 +20,7 @@ const {products} = storeToRefs(productsStore)
       :title="product.title"
       :price="product.price"
       :isAdded="product.isAdded"
-      :isFavorite="false"
+      :isFavorite="product.isFavorite"
     />
   </div>
 </template>
