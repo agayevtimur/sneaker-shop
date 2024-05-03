@@ -4,9 +4,11 @@ import CartItem from '@/components/CartItem.vue'
 import { storeToRefs } from 'pinia'
 
 import { useCartStore } from '@/stores/CartStore'
+
 const cartStore = useCartStore()
 const { cartLength } = cartStore
 const { cartItems } = storeToRefs(cartStore)
+
 </script>
 <template>
   <div class="flex flex-1 flex-col gap-3" v-auto-animate>

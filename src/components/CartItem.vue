@@ -1,5 +1,4 @@
 <script setup>
-import { storeToRefs } from 'pinia'
 const props = defineProps({
   imageUrl: String,
   title: String,
@@ -8,7 +7,6 @@ const props = defineProps({
 })
 
 import { useCartStore } from '@/stores/CartStore'
-const { cartItems } = storeToRefs(useCartStore)
 const { removeFromCart } = useCartStore()
 
 const onHandleCart = (id) => {

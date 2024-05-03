@@ -4,7 +4,6 @@ import { useProductsStore } from '@/stores/ProductsStore'
 
 export const useCartStore = defineStore('useCartStore', () => {
   const productsStore = useProductsStore()
-  const {updateProductCard} = productsStore
   const { products } = storeToRefs(productsStore)
 
   const cartItems = ref([])
@@ -17,16 +16,18 @@ export const useCartStore = defineStore('useCartStore', () => {
     itemToAdd.isAdded = true
     if (!cartItems.value.includes(itemToAdd)) {
       cartItems.value.push(itemToAdd)
-      console.log(cartItems.value);
     } else {
       removeFromCart(id)
     }
-    console.log(cartItems.value)
   }
 
   const removeFromCart = (itemId) => {
     cartItems.value = cartItems.value.filter((item) => item.id !== itemId)
-    updateProductCard(itemId)
+    products.value.forEach(product=>{
+      if(product.id === itemId){
+        product.isAdded = false
+      }
+    })
   }
 
   const countTotal = () => {
@@ -46,9 +47,6 @@ export const useCartStore = defineStore('useCartStore', () => {
     },
     { deep: true }
   )
-  watch(cartItems, ()=>{
-    console.log('ghiiii');
-  }, {deep: true})
 
   const cartLength = () => {
     const length = cartItems.value.length
@@ -57,7 +55,6 @@ export const useCartStore = defineStore('useCartStore', () => {
 
   const openCart = () => {
     isOpenCart.value = !isOpenCart.value
-    console.log(isOpenCart.value)
   }
 
   return {

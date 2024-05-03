@@ -45,10 +45,6 @@ const onHandleCart = () => {
           <span>Favorites</span>
         </li>
       </RouterLink>
-
-      <li class="flex gap-3 items-center cursor-pointer hover:text-black text-gray-500">
-        <img src="/profile.svg" alt="Cart" /><span>Profile</span>
-      </li>
       
     </ul>
   </header>

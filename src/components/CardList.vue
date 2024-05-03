@@ -20,7 +20,7 @@ const {products} = storeToRefs(productsStore)
       :title="product.title"
       :price="product.price"
       :isAdded="product.isAdded"
-      :isFavorite="false"
+      :isFavorite="product.isFavorite"
     />
   </div>
 </template>
