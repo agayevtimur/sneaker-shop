@@ -6,70 +6,70 @@ export const useProductsStore = defineStore('ProductsStore', () => {
   const products = ref([
     {
       id: 1,
-      title: 'Мужские Кроссовки Nike Blazer Mid Suede',
+      title: "Men's Nike Blazer Mid Suede Sneakers",
       price: 12999,
       imageUrl: '/sneakers/sneakers-1.jpg',
       isAdded: false
     },
     {
       id: 2,
-      title: 'Мужские Кроссовки Nike Air Max 270',
+      title: "Men's Nike Air Max 270 Sneakers",
       price: 15600,
       imageUrl: '/sneakers/sneakers-2.jpg',
       isAdded: false
     },
     {
       id: 3,
-      title: 'Мужские Кроссовки Nike Blazer Mid Suede',
+      title: "Men's Nike Blazer Mid Suede Sneakers",
       price: 8499,
       imageUrl: '/sneakers/sneakers-3.jpg',
       isAdded: false
     },
     {
       id: 4,
-      title: 'Кроссовки Puma X Aka Boku Future Rider',
+      title: 'Puma X Aka Boku Future Rider Sneakers',
       price: 7800,
       imageUrl: '/sneakers/sneakers-4.jpg',
       isAdded: false
     },
     {
       id: 5,
-      title: 'Кроссовки Future Rider',
+      title: 'Future Rider Sneakers',
       price: 9550,
       imageUrl: '/sneakers/sneakers-5.jpg',
       isAdded: false
     },
     {
       id: 6,
-      title: 'Кроссовки Black Edition',
+      title: 'Black Edition Sneakers',
       price: 16999,
       imageUrl: '/sneakers/sneakers-6.jpg',
       isAdded: false
     },
     {
       id: 7,
-      title: 'Кроссовки Orange Boomb Edition',
+      title: 'Orange Boomb Edition Sneakers',
       price: 7499,
       imageUrl: '/sneakers/sneakers-7.jpg',
       isAdded: false
     },
     {
       id: 8,
-      title: 'Кроссовки Nike Air Max 270',
+      title: 'Nike Air Max 270 Sneakers',
       price: 15600,
       imageUrl: '/sneakers/sneakers-8.jpg',
       isAdded: false
     },
     {
       id: 9,
-      title: 'Кроссовки Nike Air Force 1',
+      title: 'Nike Air Force 1 Sneakers',
       price: 5900,
       imageUrl: '/sneakers/sneakers-9.jpg',
       isAdded: false
     },
     {
       id: 10,
-      title: 'Кроссовки Adidas Ultraboost',
+      title: 'Adidas Ultraboost Sneakers',
       price: 11500,
       imageUrl: '/sneakers/sneakers-10.jpg',
       isAdded: false
@@ -78,70 +78,70 @@ export const useProductsStore = defineStore('ProductsStore', () => {
   const initialProducts = ref([
     {
       id: 1,
-      title: 'Мужские Кроссовки Nike Blazer Mid Suede',
+      title: "Men's Nike Blazer Mid Suede Sneakers",
       price: 12999,
       imageUrl: '/sneakers/sneakers-1.jpg',
       isAdded: false
     },
     {
       id: 2,
-      title: 'Мужские Кроссовки Nike Air Max 270',
+      title: "Men's Nike Air Max 270 Sneakers",
       price: 15600,
       imageUrl: '/sneakers/sneakers-2.jpg',
       isAdded: false
     },
     {
       id: 3,
-      title: 'Мужские Кроссовки Nike Blazer Mid Suede',
+      title: "Men's Nike Blazer Mid Suede Sneakers",
       price: 8499,
       imageUrl: '/sneakers/sneakers-3.jpg',
       isAdded: false
     },
     {
       id: 4,
-      title: 'Кроссовки Puma X Aka Boku Future Rider',
+      title: 'Puma X Aka Boku Future Rider Sneakers',
       price: 7800,
       imageUrl: '/sneakers/sneakers-4.jpg',
       isAdded: false
     },
     {
       id: 5,
-      title: 'Кроссовки Future Rider',
+      title: 'Future Rider Sneakers',
       price: 9550,
       imageUrl: '/sneakers/sneakers-5.jpg',
       isAdded: false
     },
     {
       id: 6,
-      title: 'Кроссовки Black Edition',
+      title: 'Black Edition Sneakers',
       price: 16999,
       imageUrl: '/sneakers/sneakers-6.jpg',
       isAdded: false
     },
     {
       id: 7,
-      title: 'Кроссовки Orange Boomb Edition',
+      title: 'Orange Boomb Edition Sneakers',
       price: 7499,
       imageUrl: '/sneakers/sneakers-7.jpg',
       isAdded: false
     },
     {
       id: 8,
-      title: 'Кроссовки Nike Air Max 270',
+      title: 'Nike Air Max 270 Sneakers',
       price: 15600,
       imageUrl: '/sneakers/sneakers-8.jpg',
       isAdded: false
     },
     {
       id: 9,
-      title: 'Кроссовки Nike Air Force 1',
+      title: 'Nike Air Force 1 Sneakers',
       price: 5900,
       imageUrl: '/sneakers/sneakers-9.jpg',
       isAdded: false
     },
     {
       id: 10,
-      title: 'Кроссовки Adidas Ultraboost',
+      title: 'Adidas Ultraboost Sneakers',
       price: 11500,
       imageUrl: '/sneakers/sneakers-10.jpg',
       isAdded: false
@@ -154,7 +154,6 @@ export const useProductsStore = defineStore('ProductsStore', () => {
     } else if (category === 'cheap') {
       products.value = initialProducts.value.sort((a, b) => a.price - b.price)
     }
-
   }
 
   const searchProducts = (searchValue) => {
@@ -168,6 +167,5 @@ export const useProductsStore = defineStore('ProductsStore', () => {
     }
   }
 
-
-  return { products, filterProducts, searchProducts, }
+  return { products, filterProducts, searchProducts }
 })
