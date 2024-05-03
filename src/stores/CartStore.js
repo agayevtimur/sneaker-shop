@@ -10,7 +10,7 @@ export const useCartStore = defineStore('useCartStore', () => {
   const cartTotal = ref(0)
   const cartTotalWithTax = ref(0)
   const isOpenCart = ref(false)
-
+  const isOrdered = ref(false)
   const addToCart = (id) => {
     const itemToAdd = products.value.find((item) => item.id === id)
     itemToAdd.isAdded = true
@@ -23,8 +23,8 @@ export const useCartStore = defineStore('useCartStore', () => {
 
   const removeFromCart = (itemId) => {
     cartItems.value = cartItems.value.filter((item) => item.id !== itemId)
-    products.value.forEach(product=>{
-      if(product.id === itemId){
+    products.value.forEach((product) => {
+      if (product.id === itemId) {
         product.isAdded = false
       }
     })
@@ -55,6 +55,15 @@ export const useCartStore = defineStore('useCartStore', () => {
 
   const openCart = () => {
     isOpenCart.value = !isOpenCart.value
+    isOrdered.value = isOrdered.value === true ? false : null
+  }
+
+  const createOrder = () => {
+    isOrdered.value = true
+    cartItems.value = []
+    products.value.forEach((product) => {
+      product.isAdded = false
+    })
   }
 
   return {
@@ -65,6 +74,8 @@ export const useCartStore = defineStore('useCartStore', () => {
     isOpenCart,
     cartTotal,
     cartTotalWithTax,
-    removeFromCart
+    removeFromCart,
+    createOrder,
+    isOrdered
   }
 })
